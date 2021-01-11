@@ -173,7 +173,11 @@ setInterval(() => {
   }
 });
 
+//level executor
+
 mainMenu();
+
+//
 
 function mainMenu(){
   levelHeader.textContent = ">Main Menu<";
