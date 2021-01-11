@@ -1648,7 +1648,7 @@ function stage6(){
 }
 
 function stage7(){
-  levelHeader.textContent = "To Be Continued";
+  levelHeader.textContent = ">To Be Continued<";
 }
 
 
