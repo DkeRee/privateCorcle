@@ -1109,7 +1109,7 @@ function stage5(){
     }
   });
 
-  var lavaSpin3 = Matter.Bodies.rectangle(602, 97, 80, 20, {
+  var lavaSpin3 = Matter.Bodies.rectangle(602, 102, 80, 20, {
     isStatic: true,
     rotationSpeed: -0.0135,
     render: {
@@ -1323,8 +1323,8 @@ function stage6(){
 
   var tempBodies = [];
   var lavaBodies = [];
-  var positiveSpeed = 0.1485;
-  var negativeSpeed = -0.1485;
+  var positiveSpeed = 0.1477;
+  var negativeSpeed = -0.1477;
 
   function addNormalBodyStatic(x, y, width, height){
     tempBodies.push(Matter.Bodies.rectangle(x, y, width, height, {
@@ -1597,8 +1597,8 @@ function stage6(){
     var pairs = event.pairs;
     for (var i = 0; i < lavaBodies.length; i++){
       if (lavaBodies[i] == pairs[0].bodyB){
-        positiveSpeed = 0.1485;
-        negativeSpeed = -0.1485;
+        positiveSpeed = 0.1477;
+        negativeSpeed = -0.1477;
         Matter.Body.setPosition(player, {x: 160, y: 80});
         Matter.Body.setPosition(spinnerThree, {x: 750, y: 550});
         Matter.Body.setPosition(spinnerFour, {x: 750, y: 550});
