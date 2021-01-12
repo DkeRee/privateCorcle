@@ -1494,7 +1494,7 @@ function stage6(){
   }
 
   function moveSmallSpinnerLeft(){
-    Matter.Body.translate(spinnerFive, {x: -3.5, y: 0});
+    Matter.Body.translate(spinnerFive, {x: -2.3, y: 0});
     if (spinnerFive.position.x <= 590){
       requestAnimationFrame(moveSmallSpinnerRight);
       return;
@@ -1503,7 +1503,7 @@ function stage6(){
   }
 
   function moveSmallSpinnerRight(){
-    Matter.Body.translate(spinnerFive, {x: 3.5, y: 0});
+    Matter.Body.translate(spinnerFive, {x: 2.3, y: 0});
     if (spinnerFive.position.x >= 730){
       requestAnimationFrame(moveSmallSpinnerLeft);
       return;
@@ -1588,8 +1588,8 @@ function stage6(){
   Matter.Events.on(engine, 'collisionStart', event => {
     var pairs = event.pairs;
     if (pairs[0].bodyB == detectorBlock){
-      positiveSpeed = 0.3;
-      negativeSpeed = -0.3;
+      positiveSpeed = 0.2;
+      negativeSpeed = -0.2;
     }
   });
 
