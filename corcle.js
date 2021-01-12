@@ -1099,7 +1099,7 @@ function stage5(){
     }
   });
 
-  var lavaSpin2 = Matter.Bodies.rectangle(665, 240, 126, 20, {
+  var lavaSpin2 = Matter.Bodies.rectangle(660, 238, 125, 20, {
     isStatic: true,
     rotationSpeed: 0.0135,
     render: {
@@ -1109,7 +1109,7 @@ function stage5(){
     }
   });
 
-  var lavaSpin3 = Matter.Bodies.rectangle(614, 116, 95, 20, {
+  var lavaSpin3 = Matter.Bodies.rectangle(604, 105, 80, 20, {
     isStatic: true,
     rotationSpeed: -0.0135,
     render: {
@@ -1361,10 +1361,10 @@ function stage6(){
   addLavaBodyStatic(388, 383, 100, 200);
   addLavaBodyStatic(451, 363, 25, 240);
   addLavaBodyStatic(545, 557, 160, 20);
-  addLavaBodyStatic(631, 308, 155, 20);
+  addLavaBodyStatic(631, 305, 155, 20);
   addNormalBodyStatic(318, 212, 38, 50);
   addNormalBodyStatic(451, 190, 25, 100);
-  addNormalBodyStatic(414, 125, 99, 25);
+  addNormalBodyStatic(416, 125, 96, 25);
   addNormalBodyStatic(408, 60, 220, 25);
   addNormalBodyStatic(535, 263, 30, 430);
   addNormalBodyStatic(615, 495, 20, 100);
