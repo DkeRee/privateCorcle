@@ -1089,7 +1089,7 @@ function stage5(){
     }
   }
 
-  var lavaSpin1 = Matter.Bodies.rectangle(694, 495, 85, 20, {
+  var lavaSpin1 = Matter.Bodies.rectangle(694, 498, 85, 20, {
     isStatic: true,
     rotationSpeed: 0.5,
     render: {
@@ -1099,7 +1099,7 @@ function stage5(){
     }
   });
 
-  var lavaSpin2 = Matter.Bodies.rectangle(665, 238, 125, 20, {
+  var lavaSpin2 = Matter.Bodies.rectangle(660, 238, 125, 20, {
     isStatic: true,
     rotationSpeed: 0.0135,
     render: {
