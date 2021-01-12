@@ -1494,7 +1494,7 @@ function stage6(){
   }
 
   function moveSmallSpinnerLeft(){
-    Matter.Body.translate(spinnerFive, {x: -2, y: 0});
+    Matter.Body.translate(spinnerFive, {x: -4, y: 0});
     if (spinnerFive.position.x <= 590){
       requestAnimationFrame(moveSmallSpinnerRight);
       return;
@@ -1503,7 +1503,7 @@ function stage6(){
   }
 
   function moveSmallSpinnerRight(){
-    Matter.Body.translate(spinnerFive, {x: 2, y: 0});
+    Matter.Body.translate(spinnerFive, {x: 4, y: 0});
     if (spinnerFive.position.x >= 730){
       requestAnimationFrame(moveSmallSpinnerLeft);
       return;
