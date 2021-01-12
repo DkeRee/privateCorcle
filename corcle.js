@@ -1099,7 +1099,7 @@ function stage5(){
     }
   });
 
-  var lavaSpin2 = Matter.Bodies.rectangle(660, 238, 125, 20, {
+  var lavaSpin2 = Matter.Bodies.rectangle(665, 238, 125, 20, {
     isStatic: true,
     rotationSpeed: 0.0135,
     render: {
@@ -1109,7 +1109,7 @@ function stage5(){
     }
   });
 
-  var lavaSpin3 = Matter.Bodies.rectangle(604, 102, 80, 20, {
+  var lavaSpin3 = Matter.Bodies.rectangle(602, 100, 80, 20, {
     isStatic: true,
     rotationSpeed: -0.0135,
     render: {
@@ -1323,8 +1323,8 @@ function stage6(){
 
   var tempBodies = [];
   var lavaBodies = [];
-  var positiveSpeed = 0.1495;
-  var negativeSpeed = -0.1495;
+  var positiveSpeed = 0.1485;
+  var negativeSpeed = -0.1485;
 
   function addNormalBodyStatic(x, y, width, height){
     tempBodies.push(Matter.Bodies.rectangle(x, y, width, height, {
@@ -1364,7 +1364,7 @@ function stage6(){
   addLavaBodyStatic(631, 305, 155, 20);
   addNormalBodyStatic(318, 212, 38, 50);
   addNormalBodyStatic(451, 190, 25, 100);
-  addNormalBodyStatic(416, 125, 95, 25);
+  addNormalBodyStatic(417, 125, 94, 25);
   addNormalBodyStatic(408, 60, 220, 25);
   addNormalBodyStatic(535, 263, 30, 430);
   addNormalBodyStatic(615, 495, 20, 100);
@@ -1597,8 +1597,8 @@ function stage6(){
     var pairs = event.pairs;
     for (var i = 0; i < lavaBodies.length; i++){
       if (lavaBodies[i] == pairs[0].bodyB){
-        positiveSpeed = 0.1495;
-        negativeSpeed = -0.1495;
+        positiveSpeed = 0.1485;
+        negativeSpeed = -0.1485;
         Matter.Body.setPosition(player, {x: 160, y: 80});
         Matter.Body.setPosition(spinnerThree, {x: 750, y: 550});
         Matter.Body.setPosition(spinnerFour, {x: 750, y: 550});
