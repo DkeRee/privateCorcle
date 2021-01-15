@@ -14,6 +14,9 @@ var levelHeader = document.getElementById("level-counter");
 var deathCounter = document.getElementById("deaths");
 var deaths = 0;
 
+var colorSelector = document.getElementById("color-select");
+colorSelector.disabled = true;
+
 setInterval(() => {
   deathCounter.textContent = "Deaths: " + deaths;
 });
@@ -72,6 +75,8 @@ function preMenu(){
   var listener = setInterval(() => {
     if (mouseConstraint.body == button){
       startGame();
+      colorSelector.disabled = false;
+      colorSelector.style.cursor = "pointer";
       Matter.World.remove(engine.world, button);
       Matter.Composite.remove(engine.world, button);
       clearInterval(listener);
@@ -96,6 +101,10 @@ var player = Matter.Bodies.circle(400, 190, 20, {
 });
 bodies.push(player);
 Matter.Body.setVelocity(player, {x: 0, y: 0});
+
+colorSelector.onchange = function(){
+  player.render.strokeStyle = colorSelector.value;
+}
 
 Matter.Events.on(engine, 'collisionStart', event => {
   var pairs = event.pairs;
