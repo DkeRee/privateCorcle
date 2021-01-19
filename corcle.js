@@ -184,7 +184,7 @@ setInterval(() => {
 
 //level executor
 
-stage6();
+mainMenu();
 
 //
 
