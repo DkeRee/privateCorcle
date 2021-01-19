@@ -184,7 +184,7 @@ setInterval(() => {
 
 //level executor
 
-mainMenu();
+ending();
 
 //
 
@@ -1373,7 +1373,7 @@ function stage6(){
   addLavaBodyStatic(631, 305, 155, 20);
   addNormalBodyStatic(318, 212, 38, 50);
   addNormalBodyStatic(451, 190, 25, 100);
-  addNormalBodyStatic(417, 125, 93, 25);
+  addNormalBodyStatic(416, 125, 94, 25);
   addNormalBodyStatic(408, 60, 220, 25);
   addNormalBodyStatic(535, 263, 30, 430);
   addNormalBodyStatic(615, 495, 20, 100);
@@ -1634,7 +1634,7 @@ function stage6(){
 
   var sixthLevelFinish = setInterval(() => {
     if (player.position.y <= 0){
-      spawnSound.play();
+      specialSpawn.play();
       
       for (var i = 0; i < tempBodies.length; i++){
         Matter.World.remove(engine.world, tempBodies[i]);
@@ -1649,15 +1649,66 @@ function stage6(){
       Matter.World.remove(engine.world, [portalOne, portalTwo, ejectorX]);
       Matter.Composite.remove(engine.world, [portalOne, portalTwo, ejectorX]);
 
-      stage7();
+      ending();
       clearInterval(sixthLevelFinish);
     }
   });
 
 }
 
-function stage7(){
-  levelHeader.textContent = ">To Be Continued<";
+function ending(){
+  levelHeader.textContent = ">Thanks For Playing<";
+  specialSpawn.play();
+
+  Matter.Body.setPosition(player, {x: 3000, y: 3000});
+  Matter.World.remove(engine.world, floor);
+  Matter.Composite.remove(engine.world, floor);
+  Matter.World.remove(engine.world, leftWall);
+  Matter.Composite.remove(engine.world, leftWall);
+  Matter.World.remove(engine.world, rightWall);
+  Matter.Composite.remove(engine.world, rightWall);
+
+
+  function restart(){
+    Matter.World.remove(engine.world, text);
+    Matter.Composite.remove(engine.world, text);
+    setTimeout(() => {
+      titleScreen.volume = 0.15;
+      Matter.World.add(engine.world, [floor, leftWall, rightWall]);
+      Matter.Body.setPosition(player, {x: 400, y: 190});
+      deaths = 0;
+      mainMenu();
+      spawnSound.play();
+    }, 2000);
+  }
+
+   var text = Matter.Bodies.rectangle(400, 273, 20, 20, {
+    isStatic: true,
+    collisionFilter: {
+      mask: 0
+    },
+    render: {
+      fillStyle: 'transparent',
+      sprite: {
+        texture: 'images/thankyou.png'
+      }
+    }
+  });
+  Matter.World.add(engine.world, text); 
+
+  setTimeout(() => {
+    function fadeText(){
+      text.render.opacity -= 0.01;
+      if (text.render.opacity <= 0){
+        text.render.opacity = 0;
+        restart();
+        return;
+      }
+      requestAnimationFrame(fadeText);
+    }
+    window.requestAnimationFrame(fadeText);
+  }, 2000);
+
 }
 
 
