@@ -1373,7 +1373,7 @@ function stage6(){
   addLavaBodyStatic(631, 305, 155, 20);
   addNormalBodyStatic(318, 212, 38, 50);
   addNormalBodyStatic(451, 190, 25, 100);
-  addNormalBodyStatic(416, 125, 95, 25);
+  addNormalBodyStatic(417, 125, 94, 25);
   addNormalBodyStatic(408, 60, 220, 25);
   addNormalBodyStatic(535, 263, 30, 430);
   addNormalBodyStatic(615, 495, 20, 100);
