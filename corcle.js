@@ -1658,7 +1658,6 @@ function stage6(){
 
 function ending(){
   levelHeader.textContent = ">Thanks For Playing<";
-  specialSpawn.play();
 
   Matter.Body.setPosition(player, {x: 3000, y: 3000});
   Matter.World.remove(engine.world, floor);
@@ -1675,6 +1674,7 @@ function ending(){
     setTimeout(() => {
       titleScreen.volume = 0.15;
       Matter.World.add(engine.world, [floor, leftWall, rightWall]);
+      Matter.Body.setVelocity(player, {x: 0, y: 0});
       Matter.Body.setPosition(player, {x: 400, y: 190});
       deaths = 0;
       mainMenu();
