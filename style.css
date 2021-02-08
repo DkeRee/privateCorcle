@@ -139,3 +139,16 @@ body {
         background-position: 100% 0;
     }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2C2F33;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #555;
+}
