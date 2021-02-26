@@ -1,3 +1,4 @@
+(function(){
 var titleScreen = document.getElementById("titleScreen");
 var portalEntering = document.getElementById("portal-entering");
 var spawnSound = document.getElementById("spawnSound");
@@ -13,6 +14,8 @@ var teleportSound = document.getElementById("teleport");
 var levelHeader = document.getElementById("level-counter");
 var deathCounter = document.getElementById("deaths");
 var deaths = 0;
+
+var frameTime = 3;
 
 var colorSelector = document.getElementById("color-select");
 colorSelector.disabled = true;
@@ -44,7 +47,10 @@ var render = Matter.Render.create({
 
 function runEngine(){
   setInterval(() => {
-    Matter.Engine.update(engine, [delta = 16.666]);
+    var now = Date.now();
+    setTimeout(() => {
+      Matter.Engine.update(engine, [delta = 16.666]);
+    }, frameTime - (Date.now - now));
   }, 1000/60);
 }
 
@@ -1723,3 +1729,5 @@ function ending(){
 
 
 }
+
+})();
