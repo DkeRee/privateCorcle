@@ -23,6 +23,10 @@ setInterval(() => {
 
 titleScreen.volume = 0.15;
 
+$(body).bind('contextmenu', function(e) {
+  return false;
+}); 
+
 var engine = Matter.Engine.create({
   bounds: {
     min: {x: 0, y: 0},
@@ -37,6 +41,12 @@ var render = Matter.Render.create({
     wireframes: false
   }
 });
+
+function runEngine(){
+  setInterval(() => {
+    Matter.Engine.update(engine, [delta = 16.666]);
+  }, 1000/60);
+}
 
 //executor
 
@@ -69,7 +79,7 @@ function preMenu(){
 
   Matter.World.add(engine.world, button);
 
-  Matter.Engine.run(engine);
+  runEngine();
   Matter.Render.run(render);
 
   var listener = setInterval(() => {

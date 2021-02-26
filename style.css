@@ -42,12 +42,14 @@ body {
   font-family: monospace;
   font-size: 20px;
   text-decoration: underline;
+  user-select: none;
 }
 
 #corcle-color {
   color: white;
   font-size: 18px;
   font-family: monospace;
+  user-select: none;
 }
 
 #color-select {
@@ -92,6 +94,7 @@ body {
   color: transparent;
   animation: rainbow_animation 6s ease-in-out infinite;
   background-size: 400% 100%;
+  user-select: none;
 }
 
 #change-log {
@@ -128,6 +131,7 @@ body {
   color: transparent;
   animation: rainbow_animation 6s ease-in-out infinite;
   background-size: 400% 100%;
+  user-select: none;
 }
 
 @keyframes rainbow_animation {
