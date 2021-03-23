@@ -26,6 +26,20 @@ body {
   text-align: center;
 }
 
+#iframe-div {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  margin-top: 115px;
+}
+
+#iframe {
+  border: 2px solid transparent;
+  height: 500px;
+  width: auto;
+  border-radius: 8px;
+}
+
 #corcle-settings-div {
   word-wrap: break-word;
   text-align: center;
@@ -35,6 +49,24 @@ body {
   background-color: #23272a;
   position: absolute;
   left: 80%;
+}
+
+#close-div {
+  position: absolute;
+  margin-top: 129px;
+  margin-left: 295px;
+  display: none;
+}
+
+#close {
+  background-color: red;
+  font-family: monospace;
+  color: white;
+  font-size: 25px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
 }
 
 #title {

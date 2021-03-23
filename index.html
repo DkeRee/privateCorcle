@@ -29,6 +29,12 @@
     <div id = "icons">
       <input type = "image" src = "images/discord.png" id = "discord">
     </div>
+    <div id = "iframe-div">
+      <iframe id = "iframe"></iframe>
+    </div>
+    <div id = "close-div">
+        <button id = "close">X</button>
+    </div>
     <div id = "corcle-settings-div">
       <h1 id = "title">Corcle Settings</h1>
       <h2 id = "corcle-color">Corcle Color:</h2>
@@ -42,8 +48,78 @@
     </div>
     <h1 id = "deaths"></h1>
     <h1 id = "level-counter"></h1>
+    <script>
+      var infoButton = document.getElementById("info");
+      var iframeDiv = document.getElementById("iframe-div");
+      var iframe = document.getElementById("iframe");
+      var closeDiv = document.getElementById("close-div");
+      var close = document.getElementById("close");
+      var changelogButton = document.getElementById("change-log");
+      var creditButton = document.getElementById("credits");
+      var buttonFx = document.getElementById("button-click");
+      var discordButton = document.getElementById("discord");
+
+      function renderHTML(file){
+        iframe.src = "https://corcle.dkeree.repl.co/" + file;
+        iframe.addEventListener('load', () => {
+            iframeDiv.style.display = 'block';
+            closeDiv.style.display = 'block';
+        });
+      }
+
+      infoButton.onmouseover = function(){
+        infoButton.style.borderColor = "#7289DA";
+      }
+
+      changelogButton.onmouseover = function(){
+        changelogButton.style.borderColor = "#7289DA";
+      }
+
+      creditButton.onmouseover = function(){
+        creditButton.style.borderColor = "#7289DA";
+      }
+
+      infoButton.onmouseout = function(){
+        infoButton.style.borderColor = "white";
+      }
+
+      changelogButton.onmouseout = function(){
+        changelogButton.style.borderColor = "white";
+      }
+
+      creditButton.onmouseout = function(){
+        creditButton.style.borderColor = "white";
+      }
+
+
+
+      infoButton.addEventListener("click", () => {
+        buttonFx.play();
+        renderHTML('info.html');
+      });
+
+      changelogButton.addEventListener("click", () => {
+        buttonFx.play();
+        renderHTML('changelog.html');
+      });
+
+      creditButton.addEventListener("click", () => {
+        buttonFx.play();
+        renderHTML('credits.html');
+      });
+
+      close.addEventListener("click", () => {
+          buttonFx.play();
+          iframeDiv.style.display = 'none';
+          closeDiv.style.display = 'none';  
+      })
+
+      discordButton.addEventListener("click", () => {
+        buttonFx.play();
+        window.open("https://discord.gg/HQ9uuNdtWS", "_blank");
+      });
+    </script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js" integrity = "sha512-pi0tSRZdlNRZeANPwdAIHRAYg6gZZV6QlAiyHXn5TYqLzBKE9jlttO/QgYLMhISD6oNv2kPsVelx+n5nw0FqKA==" crossorigin = "anonymous"></script>
 	  <script src = "corcle.js"></script>
-    <script src = "buttons.js"></script>
   </body>
 </html>
