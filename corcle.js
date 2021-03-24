@@ -1698,7 +1698,7 @@ function ending(){
     }, 2000);
   }
 
-   var text = Matter.Bodies.rectangle(400, 273, 20, 20, {
+   var text = Matter.Bodies.rectangle(400, 293, 20, 20, {
     isStatic: true,
     collisionFilter: {
       mask: 0
