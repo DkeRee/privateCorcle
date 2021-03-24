@@ -1,21 +1,19 @@
 (function(){
-var titleScreen = document.getElementById("titleScreen");
-var portalEntering = document.getElementById("portal-entering");
-var spawnSound = document.getElementById("spawnSound");
-var bounceSound = document.getElementById("bounceFx");
-var deathSound = document.getElementById("deathFx");
-var ejectSound = document.getElementById("hole-sound");
-var specialSpawn = document.getElementById("special-spawn");
-var secondThump = document.getElementById("second-thump");
-var errorSound = document.getElementById("error");
-var tvStatic = document.getElementById("static");
-var teleportSound = document.getElementById("teleport");
+var titleScreen = new Audio('audio/loadingScreen.mp3');
+var portalEntering = new Audio('audio/portal.mp3');
+var spawnSound = new Audio('audio/spawn.mp3');
+var bounceSound = new Audio('audio/bounce.mp3');
+var deathSound = new Audio('audio/deathFx.wav');
+var ejectSound = new Audio('audio/hole.mp3');
+var specialSpawn = new Audio('audio/specialSpawn.mp3');
+var secondThump = new Audio('audio/theSecondThump.mp3');
+var errorSound = new Audio('audio/error.mp3');
+var tvStatic = new Audio('audio/tvstatic.mp3');
+var teleportSound = new Audio('audio/teleport.mp3');
 
 var levelHeader = document.getElementById("level-counter");
 var deathCounter = document.getElementById("deaths");
 var deaths = 0;
-
-var frameTime = 3;
 
 var colorSelector = document.getElementById("color-select");
 colorSelector.disabled = true;
@@ -44,15 +42,6 @@ var render = Matter.Render.create({
     wireframes: false
   }
 });
-
-function runEngine(){
-  setInterval(() => {
-    var now = Date.now();
-    setTimeout(() => {
-      Matter.Engine.update(engine, [delta = 16.666]);
-    }, frameTime - (Date.now - now));
-  }, 1000/60);
-}
 
 //executor
 
@@ -85,7 +74,7 @@ function preMenu(){
 
   Matter.World.add(engine.world, button);
 
-  runEngine();
+  Matter.Engine.run(engine);
   Matter.Render.run(render);
 
   var listener = setInterval(() => {
