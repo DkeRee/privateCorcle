@@ -37,7 +37,7 @@ body {
 #iframe {
   border: 2px solid transparent;
   height: 500px;
-  width: auto;
+  width: 310px;
   border-radius: 8px;
 }
 
@@ -55,7 +55,7 @@ body {
 #close-div {
   position: absolute;
   margin-top: 129px;
-  margin-left: 295px;
+  margin-left: 300px;
   display: none;
 }
 
@@ -68,6 +68,10 @@ body {
   border: 2px solid transparent;
   cursor: pointer;
   outline: none;
+}
+
+#close:hover {
+  background-color: #be0000;
 }
 
 #title {
@@ -103,20 +107,6 @@ body {
   */
 }
 
-
-
-#info {
-  float: left;
-  margin-left: 35px;
-  font-size: 25px;
-  cursor: pointer;
-  color: white;
-  border-radius: 8px;
-  border: 3px solid white;
-  background-color: #23272a;
-  outline: none;
-}
-
 #deaths {
   font-size: 25px;
   font-family: monospace;
@@ -128,6 +118,18 @@ body {
   animation: rainbow_animation 6s ease-in-out infinite;
   background-size: 400% 100%;
   user-select: none;
+}
+
+#info {
+  float: left;
+  margin-left: 35px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+  border-radius: 8px;
+  border: 3px solid white;
+  background-color: #23272a;
+  outline: none;
 }
 
 #change-log {
@@ -152,6 +154,18 @@ body {
   border: 3px solid white;
   background-color: #23272a;
   outline: none;
+}
+
+#info:hover {
+  border: 3px solid #7289DA;
+}
+
+#change-log:hover {
+  border: 3px solid #7289DA;
+}
+
+#credits:hover {
+  border: 3px solid #7289DA;
 }
 
 #level-counter {

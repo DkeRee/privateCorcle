@@ -60,38 +60,12 @@
       var discordButton = document.getElementById("discord");
 
       function renderHTML(file){
-        iframe.src = "https://corcle.dkeree.repl.co/" + file;
+        iframe.src = "https://corcle.dkeree.repl.co/popup/" + file;
         iframe.addEventListener('load', () => {
             iframeDiv.style.display = 'block';
             closeDiv.style.display = 'block';
         });
       }
-
-      infoButton.onmouseover = function(){
-        infoButton.style.borderColor = "#7289DA";
-      }
-
-      changelogButton.onmouseover = function(){
-        changelogButton.style.borderColor = "#7289DA";
-      }
-
-      creditButton.onmouseover = function(){
-        creditButton.style.borderColor = "#7289DA";
-      }
-
-      infoButton.onmouseout = function(){
-        infoButton.style.borderColor = "white";
-      }
-
-      changelogButton.onmouseout = function(){
-        changelogButton.style.borderColor = "white";
-      }
-
-      creditButton.onmouseout = function(){
-        creditButton.style.borderColor = "white";
-      }
-
-
 
       infoButton.addEventListener("click", () => {
         buttonFx.play();
