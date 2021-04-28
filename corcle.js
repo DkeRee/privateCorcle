@@ -24,7 +24,7 @@ setInterval(() => {
 
 titleScreen.volume = 0.15;
 
-$(body).bind('contextmenu', function(e) {
+$("#html").bind('contextmenu', function(e) {
   return false;
 });
 
