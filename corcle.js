@@ -1232,7 +1232,7 @@ function stage5(){
     }
   });
 
-  var static = setInterval(() => {
+  var rotation = setInterval(() => {
     if (fixed == false){
       tvStatic.play();
       setTimeout(() => {
@@ -1332,7 +1332,7 @@ function stage5(){
 
       stage6();
       clearInterval(mouseCheck);
-      clearInterval(static);
+      clearInterval(rotation);
       clearInterval(fifthLevelFinish);
     }
   });
