@@ -80,7 +80,21 @@ function preMenu(){
 
   Matter.World.add(engine.world, button);
 
-  Matter.Engine.run(engine);
+  const fpsInterval = 1000 / 60;
+  var then = Date.now();
+
+  function update(){
+    var now = Date.now();
+    var elapsed = now - then;
+
+    if (elapsed > fpsInterval){
+      then = now - (elapsed % fpsInterval);
+      Matter.Engine.update(engine, fpsInterval);
+    }
+    requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+
   Matter.Render.run(render);
 
   var listener = setInterval(() => {
